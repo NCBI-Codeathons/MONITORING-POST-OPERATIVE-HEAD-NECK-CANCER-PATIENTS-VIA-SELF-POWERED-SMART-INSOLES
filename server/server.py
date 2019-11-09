@@ -1,6 +1,15 @@
 import socket
 import sys
+import mysql.connector
 
+pressureDatabase = mysql.connector.connect(
+        host = "localhost", 
+        user = "yourusername",
+        password = "yourpassword"
+)
+
+cursor = pressureDatabase.cursor()
+cursor.execute("Create Database Pressure Database")
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 serverAddress = ('local host', 8000);
@@ -13,7 +22,7 @@ while True:
     # Wait for a connection
     print >>sys.stderr, 'waiting for a connection'
     connection, clientAddress = sock.accept()
-     try:
+    try:
         print >>sys.stderr, 'connection from', client_address
 
         # Receive the data in small chunks and retransmit it
