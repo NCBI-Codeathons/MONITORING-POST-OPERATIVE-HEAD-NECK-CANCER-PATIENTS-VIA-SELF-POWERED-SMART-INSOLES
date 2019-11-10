@@ -24,13 +24,6 @@ week2 = 0;
 for n in range(7, 14, 1):
     week2 = week2 + c1[n];
     n = n + 1;
-#fig, ax = plt.subplots(1)
-#ax.plot(c1)
-#plt.xlabel('Weeks')
-#plt.ylabel('Pressure')
-#fig.show()
-#personWeight = 150;
-#rangePercentage = 0.2
 reportToDoctor = "";
 if week1 < week2:
     reportToDoctor = "You have gained more weight than necessary. Contact doctor";
@@ -38,7 +31,7 @@ elif week1 > week2:
     reportToDoctor = "You have lost more weight than necessary. Contact doctor";
 else:
     reportToDoctor = "You are within healthy range";  
-client.messages.create(to="+15127390615", 
-                       from_="+12055399840",
+client.messages.create(to="+1xxxxxxxxxx", 
+                       from_="+1xxxxxxxxxx",
                        body=reportToDoctor)
 print(reportToDoctor)
